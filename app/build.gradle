@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.app.transport"
+        minSdk 23
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+// TODO: Change to actual dependencies
+dependencies {
+    implementation("androidCore")
+    implementation("appCompat")
+    implementation("material")
+    implementation("constraintLayout")
+
+    implementation("koinCore")
+    implementation("koinAndroid")
+
+    implementation("kotlinResult")
+
+    implementation("okhttp3")
+    implementation("okhttpLoggingInterceptor")
+
+    implementation("retrofit")
+    implementation("retrofitJackson")
+    implementation("retrofitGson")
+    implementation("retrofitCoroutinesAdapter")
+
+    implementation("jacksonCore")
+    implementation("jacksonAnnotations")
+    implementation("jacksonDatabind")
+    implementation("jacksonJoda")
+    implementation("jacksonModule")
+
+    implementation("fragment")
+    implementation("navigationFragment")
+    implementation("navigationUI")
+
+    implementation("lifecycleViewModel")
+    implementation("lifecycleRuntime")
+
+    implementation("googleMaps")
+    implementation("googlePlaces")
+    implementation("googleLocation")
+
+    testImplementation 'junit:junit:4.13.2'
+}
